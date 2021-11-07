@@ -54,6 +54,8 @@ namespace mis321_pa4_api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            IDeleteAllLikes dl = new DeletePostLikes();
+            dl.DeleteLikes(id);
             IDeletePost delete = new DeletePost();
             delete.Delete(id);
         }

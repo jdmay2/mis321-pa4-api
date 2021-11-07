@@ -12,7 +12,7 @@ namespace mis321_pa4_api.Model
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"DELETE FROM users WHERE userId=@id";
+            string stm = @"UPDATE users SET dead=1 WHERE userId=@id";
             using var cmd = new MySqlCommand(stm, con);
 
             cmd.Parameters.AddWithValue("@id", id);
