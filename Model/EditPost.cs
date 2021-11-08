@@ -12,13 +12,10 @@ namespace mis321_pa4_api.Model
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = $@"UPDATE posts SET userId=@userId, text=@text, date=@date, dead=@dead WHERE postId=@id";
+            string stm = $@"UPDATE posts SET text=@text WHERE postId=@id";
             using var cmd = new MySqlCommand(stm, con);
 
-            cmd.Parameters.AddWithValue("@userId", p.UserId);
             cmd.Parameters.AddWithValue("@text", p.Text);
-            cmd.Parameters.AddWithValue("@date", p.Date);
-            cmd.Parameters.AddWithValue("@dead", p.Dead);
             cmd.Parameters.AddWithValue("@id", p.Id);
 
             cmd.Prepare();
