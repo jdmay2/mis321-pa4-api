@@ -25,9 +25,10 @@ namespace mis321_pa4_api.Model
                 {
                     Id = rdr.GetInt32(0),
                     UserId = rdr.GetInt32(1),
-                    Text = rdr.GetString(2),
-                    Date = rdr.GetDateTime(3),
-                    Dead = rdr.GetBoolean(4),
+                    SubId = rdr.GetInt32(2),
+                    Text = rdr.GetString(3),
+                    Date = rdr.GetDateTime(4),
+                    Dead = rdr.GetBoolean(5),
                 };
                 posts.Add(p);
             }
@@ -51,9 +52,10 @@ namespace mis321_pa4_api.Model
             {
                 Id = rdr.GetInt32(0),
                 UserId = rdr.GetInt32(1),
-                Text = rdr.GetString(2),
-                Date = rdr.GetDateTime(3),
-                Dead = rdr.GetBoolean(4),
+                SubId = rdr.GetInt32(2),
+                Text = rdr.GetString(3),
+                Date = rdr.GetDateTime(4),
+                Dead = rdr.GetBoolean(5),
             };
         }
     }

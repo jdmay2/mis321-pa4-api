@@ -56,6 +56,8 @@ namespace mis321_pa4_api.Controllers
         {
             IDeleteAllLikes dl = new DeleteUserLikes();
             dl.DeleteLikes(id);
+            IDeleteAllPosts dsp = new DeleteSubUserPosts();
+            dsp.DeletePosts(id);
             IDeleteAllPosts dp = new DeleteUserPosts();
             dp.DeletePosts(id);
             IDeleteUser delete = new DeleteUser();

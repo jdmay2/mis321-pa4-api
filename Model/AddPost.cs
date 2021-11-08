@@ -12,12 +12,13 @@ namespace mis321_pa4_api.Model
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"INSERT INTO posts(postId, userId, text, date, dead) VALUES(@postId, @userId, @text, @date, @dead)";
+            string stm = @"INSERT INTO posts(postId, userId, subPostId, text, date, dead) VALUES(@postId, @userId, @subId, @text, @date, @dead)";
 
             using var cmd = new MySqlCommand(stm, con);
 
             cmd.Parameters.AddWithValue("@postId", p.Id);
             cmd.Parameters.AddWithValue("@userId", p.UserId);
+            cmd.Parameters.AddWithValue("@subId", p.SubId);
             cmd.Parameters.AddWithValue("@text", p.Text);
             cmd.Parameters.AddWithValue("@date", p.Date);
             cmd.Parameters.AddWithValue("@dead", p.Dead);
