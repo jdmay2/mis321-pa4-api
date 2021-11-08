@@ -25,7 +25,7 @@ namespace mis321_pa4_api.Model
                 {
                     Id = rdr.GetInt32(0),
                     UserId = rdr.GetInt32(1),
-                    SubId = rdr.GetInt32(2),
+                    SubId = rdr.IsDBNull(2) ? 0 : rdr.GetInt32(2),
                     Text = rdr.GetString(3),
                     Date = rdr.GetDateTime(4),
                     Dead = rdr.GetBoolean(5),
@@ -52,7 +52,7 @@ namespace mis321_pa4_api.Model
             {
                 Id = rdr.GetInt32(0),
                 UserId = rdr.GetInt32(1),
-                SubId = rdr.GetInt32(2),
+                SubId = rdr.IsDBNull(2) ? 0 : rdr.GetInt32(2),
                 Text = rdr.GetString(3),
                 Date = rdr.GetDateTime(4),
                 Dead = rdr.GetBoolean(5),
