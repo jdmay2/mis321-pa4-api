@@ -42,7 +42,7 @@ namespace mis321_pa4_api.Controllers
 
         // PUT: api/attendance/5
         [EnableCors("AnotherPolicy")]
-        [HttpPut("{id}")]
+        [HttpPut()]
         public void Put([FromBody] User u)
         {
             IEditUser edit = new EditUser();
