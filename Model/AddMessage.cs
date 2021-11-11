@@ -12,7 +12,7 @@ namespace mis321_pa4_api.Model
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"INSERT INTO chats(messageId, chatId, userId, date, text, dead) VALUES(@id, @chatId, @userId, @date, @text, @dead)";
+            string stm = @"INSERT INTO messages(messageId, chatId, userId, date, text, dead) VALUES(@id, @chatId, @userId, @date, @text, @dead)";
 
             using var cmd = new MySqlCommand(stm, con);
 
